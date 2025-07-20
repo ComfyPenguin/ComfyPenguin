@@ -1,6 +1,6 @@
 <div align="center">
 <img src="assets/vertical penguin.jpg" width="25%" align="right" />
-<a href="https://git.io/typing-svg"><img src="https://readme-typing-svg.demolab.com?font=Inconsolata&weight=500&size=50&duration=4000&pause=300&color=5FD5F5FF&center=true&vCenter=true&multiline=true&repeat=false&random=false&width=1300&height=140&lines=!Hola%2C+me+llamo+Andy!+%E2%98%86" alt="Typing SVG" width="70%"/></a>
+<a href="https://git.io/typing-svg"><img src="https://readme-typing-svg.demolab.com?font=Inconsolata&weight=500&size=50&duration=4000&pause=300&color=5FD5F5FF&center=true&vCenter=true&multiline=true&repeat=false&random=false&width=1300&height=140&lines=!Hola%2C+me+llamo+Andy!" alt="Typing SVG" width="70%"/></a>
 <br><br>
 <pre>
     •••••
