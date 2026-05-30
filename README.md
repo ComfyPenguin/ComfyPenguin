@@ -4,10 +4,10 @@
 <br><br>
 <pre>
     •••••
-    ¡Bienvenidos a mi repositorio personal de aprendizaje en 
-    Desarrollo de Aplicaciones Multiplataforma (DAM)! 
-    Este espacio está creado para documentar mi progreso, 
-    proyectos y prácticas a lo largo del curso. 🌱
+    ¡Bienvenido/a a mi repositorio de personal. 
+    Aquí voy subiendo mis proyectos personales, 
+    inventos de fin de semana y 
+    pequeñas chorradas para pasar el rato.
     •••••
 </pre>
 <br>
