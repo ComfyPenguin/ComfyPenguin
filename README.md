@@ -9,11 +9,7 @@
     pequeñas chorradas para pasar el rato.
     •••••
 </pre>
-<br>
-<img src="assets/amaterasu running no grass.gif" width="170" />
-<br><br>
 </div>
-<hr>
 <!--
 <img
   src="https://github-readme-stats.vercel.app/api?username=ComfyPenguin&theme=react&hide_border=true&show_icons=true&include_all_commits=true&count_private=true&locale=es"
@@ -27,15 +23,6 @@
   width="42%"
 />
  -->
-
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/ComfyPenguin/ComfyPenguin/output/pacman-contribution-graph-dark.svg">
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/ComfyPenguin/ComfyPenguin/output/pacman-contribution-graph.svg">
-  <img 
-    src="https://raw.githubusercontent.com/ComfyPenguin/ComfyPenguin/output/pacman-contribution-graph.svg"
-    alt="pacman contribution graph"
-  />
-</picture>
 
 <div align="center">
   <img src="metrics-profile.svg?v=1" alt="GitHub metrics" width="49%" />
