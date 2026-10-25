@@ -42,21 +42,6 @@ jobs:
           token: ${{ secrets.METRICS_TOKEN }}
           base: header, activity, community, repositories, metadata
           plugin_lines: yes
-          plugin_stars: yes
-          plugin_stars_limit: 3
-          extras_css: ${{ env.METRICS_CSS }}
-
-      - name: Recent code
-        uses: lowlighter/metrics@v3.34
-        with:
-          filename: metrics-code.svg
-          token: ${{ secrets.METRICS_TOKEN }}
-          base: ""
-          plugin_code: yes
-          plugin_code_lines: 12
-          plugin_code_days: 90
-          plugin_code_visibility: public
-          plugin_code_skipped: ComfyPenguin/ComfyPenguin
           extras_css: ${{ env.METRICS_CSS }}
 
       - name: Isometric calendar
@@ -68,16 +53,6 @@ jobs:
           plugin_isocalendar: yes
           plugin_isocalendar_duration: full-year
           config_padding: 10%, 1%
-          extras_css: ${{ env.METRICS_CSS }}
-
-      - name: Full-year calendar
-        uses: lowlighter/metrics@v3.34
-        with:
-          filename: metrics-year.svg
-          token: ${{ secrets.METRICS_TOKEN }}
-          base: ""
-          plugin_calendar: yes
-          plugin_calendar_limit: 0
           extras_css: ${{ env.METRICS_CSS }}
 
       - name: Languages
