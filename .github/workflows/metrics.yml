@@ -44,7 +44,6 @@ jobs:
           token: ${{ secrets.METRICS_TOKEN }}
           committer_branch: metrics # keep bot commits off main
           base: header, activity, community, repositories, metadata
-          plugin_lines: yes
           extras_css: ${{ env.METRICS_CSS }}
 
       - name: Isometric calendar
