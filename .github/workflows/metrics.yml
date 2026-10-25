@@ -6,9 +6,10 @@ on:
 
   workflow_dispatch:
 
-  push:
-    branches:
-      - main
+# One run at a time so two runs never race to write the same SVG
+concurrency:
+  group: metrics
+  cancel-in-progress: true
 
 jobs:
   metrics:
@@ -40,6 +41,7 @@ jobs:
         with:
           filename: metrics-profile.svg
           token: ${{ secrets.METRICS_TOKEN }}
+          committer_branch: output # keep bot commits off main
           base: header, activity, community, repositories, metadata
           plugin_lines: yes
           extras_css: ${{ env.METRICS_CSS }}
@@ -49,6 +51,7 @@ jobs:
         with:
           filename: metrics-calendar.svg
           token: ${{ secrets.METRICS_TOKEN }}
+          committer_branch: output # keep bot commits off main
           base: ""
           plugin_isocalendar: yes
           plugin_isocalendar_duration: full-year
@@ -60,6 +63,7 @@ jobs:
         with:
           filename: metrics-languages.svg
           token: ${{ secrets.METRICS_TOKEN }}
+          committer_branch: output # keep bot commits off main
           base: ""
           plugin_languages: yes
           plugin_languages_limit: 4
@@ -71,6 +75,7 @@ jobs:
         with:
           filename: metrics-repos.svg
           token: ${{ secrets.METRICS_TOKEN }}
+          committer_branch: output # keep bot commits off main
           base: ""
           plugin_repositories: yes
           plugin_repositories_featured: ComfyPenguin/andypr-portfolio
