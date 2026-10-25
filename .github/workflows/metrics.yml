@@ -58,7 +58,7 @@ jobs:
           base: ""
           plugin_isocalendar: yes
           plugin_isocalendar_duration: full-year
-          config_padding: 10%, 1%
+          config_padding: 10%, 8 + 11%
           extras_css: |
             ${{ env.METRICS_CSS }}
             h2.field { display: none !important; }
