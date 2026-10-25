@@ -1,5 +1,5 @@
 <div align="center">
-<img src="assets/banner.svg" alt="Andy Pérez · Desarrollador full-stack" width="100%" />
+<img src="assets/banner.svg" alt="Andy Pérez · Full-stack developer" width="100%" />
 <br><br>
 <pre>
     •••••
