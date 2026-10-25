@@ -1,0 +1,51 @@
+name: Metrics
+
+on:
+  schedule: # every day at 00:00 UTC
+    - cron: "0 0 * * *"
+
+  workflow_dispatch:
+
+  push:
+    branches:
+      - main
+
+jobs:
+  metrics:
+    permissions:
+      contents: write
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    # Palette from the portfolio ("Plano polar"). Solid panel so it reads in GitHub light and dark.
+    env:
+      METRICS_CSS: |
+        svg { background: #060e24 !important; color: #b4cde0 !important; }
+        .items-wrapper { background: transparent !important; }
+        h1, h2 { color: #f0b8a0 !important; }
+        h1 svg, h2 svg, .field svg { fill: #a8d4e6 !important; }
+        .added { color: #7fb2cf !important; }
+        footer span { color: #4f86ad !important; }
+
+    steps:
+      - name: Profile metrics
+        uses: lowlighter/metrics@v3.34
+        with:
+          filename: metrics-profile.svg
+          token: ${{ secrets.METRICS_TOKEN }}
+          base: header, activity, metadata
+          plugin_languages: yes
+          plugin_languages_limit: 4
+          plugin_languages_ignored: html, css
+          extras_css: ${{ env.METRICS_CSS }}
+
+      - name: Featured repositories
+        uses: lowlighter/metrics@v3.34
+        with:
+          filename: metrics-repos.svg
+          token: ${{ secrets.METRICS_TOKEN }}
+          base: ""
+          plugin_repositories: yes
+          plugin_repositories_featured: ComfyPenguin/andypr-portfolio
+          plugin_repositories_order: featured
+          extras_css: ${{ env.METRICS_CSS }}
