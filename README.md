@@ -9,6 +9,9 @@
     pequeñas chorradas para pasar el rato.
     •••••
 </pre>
+<br>
+<i>"Like penguins, open source works best in colonies."</i>
+<br><br>
 </div>
 <!--
 <img
