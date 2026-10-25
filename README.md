@@ -27,9 +27,22 @@
 />
  -->
 
+<table width="100%">
+  <tr valign="top">
+    <td width="50%" align="center">
+      <img src="metrics-profile.svg?v=2" alt="GitHub metrics" width="100%" />
+      <img src="metrics-languages.svg?v=2" alt="Most used languages" width="100%" />
+    </td>
+    <td width="50%" align="center">
+      <img src="metrics-code.svg?v=2" alt="Recent code" width="100%" />
+      <img src="metrics-repos.svg?v=2" alt="Featured repositories" width="100%" />
+    </td>
+  </tr>
+</table>
+
 <div align="center">
-  <img src="metrics-profile.svg?v=1" alt="GitHub metrics" width="49%" />
-  <img src="metrics-repos.svg?v=1" alt="Featured repositories" width="49%" />
+  <img src="metrics-calendar.svg?v=2" alt="Isometric contribution calendar" width="100%" />
+  <img src="metrics-year.svg?v=2" alt="Contribution calendar" width="100%" />
 </div>
 
 <div align="center">
