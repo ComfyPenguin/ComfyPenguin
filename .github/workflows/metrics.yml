@@ -71,16 +71,3 @@ jobs:
           plugin_languages_limit: 4
           plugin_languages_ignored: html, css
           extras_css: ${{ env.METRICS_CSS }}
-
-      - name: Featured repositories
-        timeout-minutes: 5 # rendering sometimes hangs; fail fast instead of waiting
-        uses: lowlighter/metrics@v3.34
-        with:
-          filename: metrics-repos.svg
-          token: ${{ secrets.METRICS_TOKEN }}
-          committer_branch: metrics # keep bot commits off main
-          base: ""
-          plugin_repositories: yes
-          plugin_repositories_featured: ComfyPenguin/andypr-portfolio
-          plugin_repositories_order: featured
-          extras_css: ${{ env.METRICS_CSS }}
