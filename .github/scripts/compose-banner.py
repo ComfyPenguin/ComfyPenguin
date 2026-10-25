@@ -13,8 +13,6 @@ from pathlib import Path
 banner, out = Path(sys.argv[1]), Path(sys.argv[2])
 W, MARGIN, GAP, COLS = 1600, 24, 32, 2
 BG = "#060e24"  # same as the metrics panels, so they blend into the page
-# placed one by one into the shortest column
-ITEMS = ["metrics-profile.svg", "metrics-calendar.svg", "metrics-languages.svg", "metrics-repos.svg"]
 
 
 def size(data):
@@ -36,20 +34,30 @@ parts = [image(bdata, 0, 0, W, W * bh / bw)]
 top = W * bh / bw + GAP
 
 cw = (W - 2 * MARGIN - GAP * (COLS - 1)) / COLS
-ys = [top] * COLS
-for name in ITEMS:
-    path = out / name
-    if not path.exists():
-        print(f"skip {name}: not found", file=sys.stderr)
-        continue
-    data = path.read_bytes()
-    w, h = size(data)
-    c = ys.index(min(ys))
-    sh = h * cw / w
-    parts.append(image(data, MARGIN + c * (cw + GAP), ys[c], cw, sh))
-    ys[c] += sh + GAP
 
-height = max(ys) - GAP + MARGIN
+
+def scaled(name):
+    data = (out / name).read_bytes()
+    w, h = size(data)
+    return data, h * cw / w
+
+
+def place(name, col, y):
+    """Draw name in a column with its top at y. Returns the bottom edge."""
+    data, h = scaled(name)
+    parts.append(image(data, MARGIN + col * (cw + GAP), y, cw, h))
+    return y + h
+
+
+# left: profile. right: languages and repos on top, empty gap, calendar pinned to the bottom
+left_end = place("metrics-profile.svg", 0, top)
+y = place("metrics-languages.svg", 1, top)
+y = place("metrics-repos.svg", 1, y + GAP)
+# the gap absorbs the height difference; if the stack grows taller, the calendar is pushed down
+cal_top = max(y + GAP, left_end - scaled("metrics-calendar.svg")[1])
+right_end = place("metrics-calendar.svg", 1, cal_top)
+
+height = max(left_end, right_end) + MARGIN
 svg = (
     f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {W} {height:.0f}" width="100%" role="img" '
     f'aria-label="Andy Pérez, full-stack developer, with GitHub metrics">'
