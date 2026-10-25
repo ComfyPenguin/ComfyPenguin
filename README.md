@@ -1,6 +1,5 @@
 <div align="center">
-<img src="assets/vertical penguin.jpg" width="25%" align="right" />
-<a href="https://git.io/typing-svg"><img src="https://readme-typing-svg.demolab.com?font=Inconsolata&weight=500&size=50&duration=4000&pause=300&color=5FD5F5FF&center=true&vCenter=true&multiline=true&repeat=false&random=false&width=1300&height=140&lines=!Hola%2C+me+llamo+Andy!" alt="Typing SVG" width="70%"/></a>
+<img src="assets/banner.svg" alt="Andy Pérez · Desarrollador full-stack" width="100%" />
 <br><br>
 <pre>
     •••••
@@ -37,6 +36,11 @@
     alt="pacman contribution graph"
   />
 </picture>
+
+<div align="center">
+  <img src="metrics-profile.svg?v=1" alt="GitHub metrics" width="49%" />
+  <img src="metrics-repos.svg?v=1" alt="Featured repositories" width="49%" />
+</div>
 
 <div align="center">
   <img 
