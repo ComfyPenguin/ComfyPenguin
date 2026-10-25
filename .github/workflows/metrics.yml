@@ -16,7 +16,7 @@ jobs:
     permissions:
       contents: write
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    timeout-minutes: 20
 
     # Palette from the portfolio ("Plano polar"). Solid panel so it reads in GitHub light and dark.
     env:
@@ -37,6 +37,7 @@ jobs:
 
     steps:
       - name: Profile metrics
+        timeout-minutes: 5 # rendering sometimes hangs; fail fast instead of waiting
         uses: lowlighter/metrics@v3.34
         with:
           filename: metrics-profile.svg
@@ -47,6 +48,7 @@ jobs:
           extras_css: ${{ env.METRICS_CSS }}
 
       - name: Isometric calendar
+        timeout-minutes: 5 # rendering sometimes hangs; fail fast instead of waiting
         uses: lowlighter/metrics@v3.34
         with:
           filename: metrics-calendar.svg
@@ -59,6 +61,7 @@ jobs:
           extras_css: ${{ env.METRICS_CSS }}
 
       - name: Languages
+        timeout-minutes: 5 # rendering sometimes hangs; fail fast instead of waiting
         uses: lowlighter/metrics@v3.34
         with:
           filename: metrics-languages.svg
@@ -71,6 +74,7 @@ jobs:
           extras_css: ${{ env.METRICS_CSS }}
 
       - name: Featured repositories
+        timeout-minutes: 5 # rendering sometimes hangs; fail fast instead of waiting
         uses: lowlighter/metrics@v3.34
         with:
           filename: metrics-repos.svg
